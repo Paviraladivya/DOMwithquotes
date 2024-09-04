@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Click me</button>
+    <p></p>
+  </body>
+  <script>
+    let btn = document.getElementsByTagName("button");
+    let arr = [
+      "Believe you can and you're halfway there.",
+      "It does not matter how slowly you go as long as you do not stop.",
+      "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+    ];
+    btn[0].addEventListener("click",()=>{
+      let p1=document.getElementsByTagName("p")
+      p1[0].innerHTML=arr[parseInt(Math.random()*arr.length)]
+      p1[0].style.fontSize="50px"
+    })
+    function getRandomColor() {
+      const  letters = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+    document.addEventListener("click", () => {
+      document.body.style.backgroundColor = getRandomColor();
+    });
+  </script>
+</html>
